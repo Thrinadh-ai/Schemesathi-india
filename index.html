@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SchemeSathi AI — Your Guide to Government Schemes</title>
+  <meta name="description" content="Discover verified Indian government schemes, check eligibility, explore required documents, and get grounded assistance with SchemeSathi AI.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;600;700&family=Noto+Sans+Telugu:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Global Announcement Banner -->
+  <aside class="top-announcement" aria-label="Official Disclaimer Notice">
+    <div class="container announcement-content">
+      <span class="badge-flag">🇮🇳</span>
+      <p data-i18n="top_notice">Independent public information platform. Verified official government portal links are provided for every scheme.</p>
+      <a href="#disclaimer" class="notice-link" data-i18n="read_disclaimer">Read Disclaimer</a>
+    </div>
+  </aside>
+
+  <!-- Navigation Header -->
+  <header class="site-header" id="header">
+    <div class="container header-container">
+      <a href="#" class="brand-logo" aria-label="SchemeSathi AI Home">
+        <div class="logo-emblem">
+          <span class="emblem-symbol">🏛️</span>
+        </div>
+        <div class="logo-text">
+          <span class="logo-title">SchemeSathi <span class="ai-badge">AI</span></span>
+          <span class="logo-tagline" data-i18n="tagline">Your Guide to Government Schemes</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="main-nav" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="#explore" class="nav-link" data-i18n="nav_explore">Explore Schemes</a></li>
+          <li><a href="#eligibility" class="nav-link" data-i18n="nav_eligibility">Check Eligibility</a></li>
+          <li><a href="#assistant" class="nav-link" data-i18n="nav_assistant">AI Assistant</a></li>
+          <li><a href="#checklist" class="nav-link" data-i18n="nav_checklist">Document Checklist</a></li>
+          <li><a href="#saved" class="nav-link" data-i18n="nav_saved">Saved Schemes (<span id="saved-count">0</span>)</a></li>
+        </ul>
+      </nav>
+
+      <!-- Language Selector & Actions -->
+      <div class="header-actions">
+        <div class="lang-selector-wrapper">
+          <label for="language-select" class="sr-only" data-i18n="select_language">Select Language</label>
+          <select id="language-select" class="lang-select" aria-label="Select Interface Language">
+            <option value="en">English</option>
+            <option value="te">తెలుగు (Telugu)</option>
+            <option value="hi">हिन्दी (Hindi)</option>
+          </select>
+        </div>
+
+        <button id="theme-prefs-btn" class="btn btn-outline btn-sm" aria-label="Preferences" data-i18n="preferences">
+          ⚙️ Preferences
+        </button>
+
+        <button id="mobile-menu-toggle" class="mobile-toggle" aria-expanded="false" aria-label="Toggle navigation menu">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div id="mobile-nav-drawer" class="mobile-drawer" hidden>
+      <ul class="mobile-nav-list">
+        <li><a href="#explore" class="mobile-nav-link" data-i18n="nav_explore">Explore Schemes</a></li>
+        <li><a href="#eligibility" class="mobile-nav-link" data-i18n="nav_eligibility">Check Eligibility</a></li>
+        <li><a href="#assistant" class="mobile-nav-link" data-i18n="nav_assistant">AI Assistant</a></li>
+        <li><a href="#checklist" class="mobile-nav-link" data-i18n="nav_checklist">Document Checklist</a></li>
+        <li><a href="#saved" class="mobile-nav-link" data-i18n="nav_saved">Saved Schemes</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+      <div class="container hero-container">
+        <div class="hero-text-col">
+          <div class="hero-badge">
+            <span class="hero-pulse"></span>
+            <span data-i18n="hero_badge">Empowering Every Indian Citizen</span>
+          </div>
+          <h1 class="hero-title" data-i18n="hero_title">Find Government Schemes Made for You.</h1>
+          <p class="hero-subtitle" data-i18n="hero_subtitle">
+            Discover verified Central and State government welfare schemes for students, farmers, women, entrepreneurs, and senior citizens with clear eligibility rules and official application portals.
+          </p>
+
+          <!-- Main Hero Search Bar -->
+          <form id="hero-search-form" class="hero-search-box" role="search">
+            <label for="hero-search-input" class="sr-only" data-i18n="search_placeholder">Search schemes by name, keyword, department</label>
+            <input type="text" id="hero-search-input" class="hero-search-input" placeholder="Search by scheme name, e.g. PM-KISAN, Scholarship, Mudra..." autocomplete="off">
+            <button type="submit" class="btn btn-primary btn-search" data-i18n="btn_search">Search Schemes</button>
+          </form>
+
+          <div class="hero-cta-group">
+            <a href="#eligibility" class="btn btn-secondary" data-i18n="btn_check_eligibility">🎯 Check Your Eligibility</a>
+            <a href="#assistant" class="btn btn-accent" data-i18n="btn_ask_ai">💬 Ask AI Assistant</a>
+          </div>
+
+          <!-- Quick Trust Badges -->
+          <div class="trust-metrics">
+            <div class="metric-item">
+              <span class="metric-icon">🛡️</span>
+              <span class="metric-text" data-i18n="metric_verified">100% Official Links</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-icon">⚖️</span>
+              <span class="metric-text" data-i18n="metric_rules">Strict Rule Evaluation</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-icon">🔒</span>
+              <span class="metric-text" data-i18n="metric_privacy">Privacy First & Local</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Beneficiary Category Chips -->
+    <section class="beneficiary-strip" aria-label="Popular Beneficiaries">
+      <div class="container">
+        <div class="strip-header">
+          <span class="strip-title" data-i18n="browse_by_user">Browse Schemes By Beneficiary:</span>
+        </div>
+        <div class="chip-scroll" id="beneficiary-chips">
+          <button class="chip active" data-beneficiary="" data-i18n="chip_all">All Citizens</button>
+          <button class="chip" data-beneficiary="Students" data-i18n="chip_students">🎓 Students</button>
+          <button class="chip" data-beneficiary="Farmers" data-i18n="chip_farmers">🌾 Farmers</button>
+          <button class="chip" data-beneficiary="Women" data-i18n="chip_women">👩 Women</button>
+          <button class="chip" data-beneficiary="Small Business" data-i18n="chip_business">🏪 Small Businesses</button>
+          <button class="chip" data-beneficiary="Senior Citizens" data-i18n="chip_seniors">👴 Senior Citizens</button>
+          <button class="chip" data-beneficiary="Job Seekers" data-i18n="chip_jobs">💼 Job Seekers</button>
+          <button class="chip" data-beneficiary="Economically Weaker Section" data-i18n="chip_ews">🤝 Economically Weaker</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scheme Discovery & Exploration Dashboard -->
+    <section class="section explore-section" id="explore">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title" data-i18n="explore_heading">Explore Government Schemes</h2>
+            <p class="section-desc" data-i18n="explore_subheading">Filter by sector, administrative level, or state to view verified programs.</p>
+          </div>
+          <div class="status-indicator">
+            <span class="indicator-dot"></span>
+            <span id="data-source-status">Active Database Mode</span>
+          </div>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="filter-panel">
+          <div class="filter-grid">
+            <div class="filter-group">
+              <label for="filter-search" data-i18n="label_search">Keyword Search</label>
+              <input type="text" id="filter-search" class="form-input" placeholder="Keyword or scheme name..." data-i18n-placeholder="search_placeholder">
+            </div>
+
+            <div class="filter-group">
+              <label for="filter-category" data-i18n="label_category">Category</label>
+              <select id="filter-category" class="form-select">
+                <option value="" data-i18n="opt_all_categories">All Categories</option>
+              </select>
+            </div>
+
+            <div class="filter-group">
+              <label for="filter-state" data-i18n="label_state">State / UT Jurisdiction</label>
+              <select id="filter-state" class="form-select">
+                <option value="ALL" data-i18n="opt_all_states">All India (Central + State)</option>
+              </select>
+            </div>
+
+            <div class="filter-group">
+              <label for="filter-level" data-i18n="label_level">Government Level</label>
+              <select id="filter-level" class="form-select">
+                <option value="" data-i18n="opt_all_levels">All Levels</option>
+                <option value="Central" data-i18n="opt_central">Central Government</option>
+                <option value="State" data-i18n="opt_state">State Government</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="filter-actions">
+            <button id="btn-apply-filters" class="btn btn-primary btn-sm" data-i18n="btn_apply_filters">Apply Filters</button>
+            <button id="btn-reset-filters" class="btn btn-outline btn-sm" data-i18n="btn_reset_filters">Reset Filters</button>
+            <span id="filter-results-counter" class="results-counter">Showing schemes...</span>
+          </div>
+        </div>
+
+        <!-- Scheme Cards Grid -->
+        <div id="schemes-loading" class="state-container" hidden>
+          <div class="spinner"></div>
+          <p data-i18n="loading_schemes">Retrieving verified government schemes...</p>
+        </div>
+
+        <div id="schemes-error" class="state-container state-error" hidden>
+          <span class="state-icon">⚠️</span>
+          <p id="schemes-error-msg">Failed to connect to SchemeSathi server.</p>
+          <button id="btn-retry-schemes" class="btn btn-sm btn-outline" data-i18n="btn_retry">Retry</button>
+        </div>
+
+        <div id="schemes-empty" class="state-container" hidden>
+          <span class="state-icon">🔍</span>
+          <h3 data-i18n="no_schemes_found">No Schemes Found</h3>
+          <p data-i18n="no_schemes_desc">Try broadening your search keywords or resetting filters.</p>
+        </div>
+
+        <div id="schemes-grid" class="schemes-grid">
+          <!-- Dynamically populated scheme cards -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Eligibility Checker Feature -->
+    <section class="section eligibility-section" id="eligibility">
+      <div class="container">
+        <div class="section-header text-center">
+          <h2 class="section-title" data-i18n="eligibility_title">Check Your Scheme Eligibility</h2>
+          <p class="section-desc" data-i18n="eligibility_subtitle">
+            Enter your basic details to evaluate which schemes you may potentially qualify for. We respect your privacy: calculations are performed on criteria rules and no personal identifying records are stored.
+          </p>
+        </div>
+
+        <div class="eligibility-container">
+          <form id="eligibility-form" class="eligibility-card" novalidate>
+            <div class="form-grid">
+              <!-- Age Field -->
+              <div class="form-item">
+                <label for="el-age" data-i18n="el_age">Age (Years) <span class="optional-tag" data-i18n="optional">(Optional)</span></label>
+                <input type="number" id="el-age" name="age" class="form-input" min="0" max="120" placeholder="e.g. 24">
+                <span class="field-help" data-i18n="help_age">Required for youth, child, or pension schemes</span>
+              </div>
+
+              <!-- State Field -->
+              <div class="form-item">
+                <label for="el-state" data-i18n="el_state">Residing State / UT <span class="optional-tag" data-i18n="optional">(Optional)</span></label>
+                <select id="el-state" name="state" class="form-select">
+                  <option value="ALL" data-i18n="opt_all_states">All India / Any</option>
+                </select>
+                <span class="field-help" data-i18n="help_state">Matches state-specific welfare benefits</span>
+              </div>
+
+              <!-- Household Income Field -->
+              <div class="form-item">
+                <label for="el-income" data-i18n="el_income">Annual Family Income (₹) <span class="optional-tag" data-i18n="optional">(Optional)</span></label>
+                <input type="number" id="el-income" name="income" class="form-input" min="0" step="5000" placeholder="e.g. 180000">
+                <span class="field-help" data-i18n="help_income">Helps verify economic criteria limits</span>
+              </div>
+
+              <!-- Gender Field -->
+              <div class="form-item">
+                <label for="el-gender" data-i18n="el_gender">Gender <span class="optional-tag" data-i18n="optional">(Optional)</span></label>
+                <select id="el-gender" name="gender" class="form-select">
+                  <option value="" data-i18n="opt_select">Prefer not to say / Any</option>
+                  <option value="Female" data-i18n="opt_female">Female</option>
+                  <option value="Male" data-i18n="opt_male">Male</option>
+                  <option value="Other" data-i18n="opt_other">Other</option>
+                </select>
+                <span class="field-help" data-i18n="help_gender">Only used for women or girl child specific initiatives</span>
+              </div>
+
+              <!-- Occupation Field -->
+              <div class="form-item">
+                <label for="el-occupation" data-i18n="el_occupation">Primary Occupation <span class="optional-tag" data-i18n="optional">(Optional)</span></label>
+                <select id="el-occupation" name="occupation" class="form-select">
+                  <option value="" data-i18n="opt_select">Select Occupation</option>
+                  <option value="student" data-i18n="occ_student">Student / Scholar</option>
+                  <option value="farmer" data-i18n="occ_farmer">Farmer / Agricultural Worker</option>
+                  <option value="business" data-i18n="occ_business">Small Business Owner / Artisan</option>
+                  <option value="unorganized" data-i18n="occ_unorganized">Unorganized / Daily Wage Worker</option>
+                  <option value="job_seeker" data-i18n="occ_job_seeker">Job Seeker / Unemployed</option>
+                  <option value="salaried" data-i18n="occ_salaried">Private / Salaried Employee</option>
+                  <option value="homemaker" data-i18n="occ_homemaker">Homemaker</option>
+                  <option value="retired" data-i18n="occ_retired">Retired / Senior Citizen</option>
+                </select>
+              </div>
+
+              <!-- Beneficiary Category -->
+              <div class="form-item">
+                <label for="el-category" data-i18n="el_beneficiary_cat">Social / Beneficiary Group <span class="optional-tag" data-i18n="optional">(Optional)</span></label>
+                <select id="el-category" name="beneficiary_category" class="form-select">
+                  <option value="" data-i18n="opt_select">Select Category</option>
+                  <option value="General" data-i18n="cat_general">General</option>
+                  <option value="OBC" data-i18n="cat_obc">OBC (Other Backward Class)</option>
+                  <option value="SC" data-i18n="cat_sc">SC (Scheduled Caste)</option>
+                  <option value="ST" data-i18n="cat_st">ST (Scheduled Tribe)</option>
+                  <option value="EWS" data-i18n="cat_ews">EWS / BPL Cardholder</option>
+                </select>
+              </div>
+
+              <!-- Checkbox Toggles -->
+              <div class="form-item form-item-full form-toggles">
+                <label class="toggle-checkbox">
+                  <input type="checkbox" id="el-is-student" name="is_student">
+                  <span data-i18n="chk_student">Currently enrolled as an active student</span>
+                </label>
+
+                <label class="toggle-checkbox">
+                  <input type="checkbox" id="el-is-farmer" name="is_farmer">
+                  <span data-i18n="chk_farmer">Owns or cultivates agricultural land (Farmer family)</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary" id="btn-eval-submit" data-i18n="btn_evaluate">
+                🔍 Evaluate My Eligibility
+              </button>
+              <button type="button" class="btn btn-outline" id="btn-eval-reset" data-i18n="btn_clear_form">
+                Clear Form
+              </button>
+            </div>
+          </form>
+
+          <!-- Evaluation Results Display Area -->
+          <div id="eligibility-results" class="eligibility-results" hidden>
+            <div class="results-header">
+              <h3 data-i18n="eval_results_title">Evaluation Results</h3>
+              <p id="eval-summary-text" class="eval-summary-text"></p>
+            </div>
+
+            <div id="evaluations-list" class="evaluations-list">
+              <!-- Dynamically populated scheme eligibility verdicts -->
+            </div>
+
+            <div class="eval-disclaimer-card">
+              <span class="info-icon">ℹ️</span>
+              <p id="eval-disclaimer-text" class="disclaimer-text">
+                SchemeSathi AI evaluates eligibility based on published program parameters. Final approval is subject to statutory document verification by relevant Government authorities. Never make financial commitments based solely on automated tools.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI Assistant Feature -->
+    <section class="section assistant-section" id="assistant">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="ai-pill" data-i18n="ai_pill">🤖 Grounded AI Chat</div>
+          <h2 class="section-title" data-i18n="assistant_title">SchemeSathi AI Assistant</h2>
+          <p class="section-desc" data-i18n="assistant_subtitle">
+            Ask any question in plain language. Our assistant checks verified scheme guidelines and provides exact references with official portal links.
+          </p>
+        </div>
+
+        <div class="assistant-chat-card">
+          <!-- Suggestion Chips -->
+          <div class="prompt-suggestions">
+            <span class="suggestion-label" data-i18n="try_asking">Try asking:</span>
+            <div class="suggestion-chips">
+              <button class="chip-prompt" data-query="I am a student in Andhra Pradesh. Which scholarships and schemes can I apply for?">
+                🎓 Student scholarships in AP
+              </button>
+              <button class="chip-prompt" data-query="How does PM-KISAN work and what documents are required?">
+                🌾 PM-KISAN requirements
+              </button>
+              <button class="chip-prompt" data-query="Are there loan schemes available for starting a small business?">
+                🏪 Small business MUDRA loans
+              </button>
+              <button class="chip-prompt" data-query="What healthcare coverage is available for senior citizens?">
+                🏥 Ayushman Bharat for seniors
+              </button>
+            </div>
+          </div>
+
+          <!-- Chat Window -->
+          <div class="chat-viewport" id="chat-viewport" role="log" aria-live="polite">
+            <div class="chat-message assistant-message">
+              <div class="message-avatar">🤖</div>
+              <div class="message-content">
+                <p data-i18n="ai_welcome">
+                  Namaste! I am <strong>SchemeSathi AI</strong>. I can assist you with information about government schemes, eligibility guidelines, required documents, and official application portals. How can I help you today?
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Chat Input Form -->
+          <form id="chat-form" class="chat-input-bar">
+            <label for="chat-input" class="sr-only" data-i18n="ask_question_placeholder">Type your question about government schemes</label>
+            <input type="text" id="chat-input" class="chat-input" placeholder="Ask about scholarships, pensions, farmer support, business loans..." autocomplete="off" required>
+            <button type="submit" class="btn btn-primary btn-send" id="btn-chat-send" data-i18n="btn_send">
+              <span>Send</span>
+              <span class="send-icon">➤</span>
+            </button>
+          </form>
+
+          <div class="chat-footer-note">
+            <span data-i18n="ai_footer_note">⚠️ Answers are strictly grounded in verified government records. Always verify current rules on official government websites.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Document Checklist Feature -->
+    <section class="section checklist-section" id="checklist">
+      <div class="container">
+        <div class="section-header text-center">
+          <h2 class="section-title" data-i18n="checklist_title">Interactive Document Checklist</h2>
+          <p class="section-desc" data-i18n="checklist_subtitle">
+            Keep track of required certificates and documents before applying. Ticked items are saved on your device only.
+          </p>
+        </div>
+
+        <div class="checklist-card">
+          <div class="checklist-selector-bar">
+            <label for="checklist-scheme-select" data-i18n="select_scheme_to_check">Select Scheme for Document Checklist:</label>
+            <select id="checklist-scheme-select" class="form-select">
+              <option value="" data-i18n="opt_select_scheme">-- Choose a scheme --</option>
+            </select>
+          </div>
+
+          <div id="checklist-content" class="checklist-content">
+            <p class="placeholder-msg" data-i18n="select_scheme_prompt">Select any scheme above to display its required documents and track your preparation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Saved Schemes Feature -->
+    <section class="section saved-section" id="saved">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title" data-i18n="saved_title">Saved Schemes</h2>
+            <p class="section-desc" data-i18n="saved_subtitle">Your bookmarked schemes for quick access on this browser.</p>
+          </div>
+          <button id="btn-clear-saved" class="btn btn-outline btn-sm" data-i18n="btn_clear_saved">Clear Saved</button>
+        </div>
+
+        <div class="saved-info-banner">
+          <span class="banner-icon">📱</span>
+          <span data-i18n="saved_storage_notice">Favourites are saved locally in your browser storage. They are private and specific to this device.</span>
+        </div>
+
+        <div id="saved-schemes-grid" class="schemes-grid">
+          <!-- Dynamically populated saved cards -->
+        </div>
+
+        <div id="saved-empty" class="state-container" hidden>
+          <span class="state-icon">🔖</span>
+          <h3 data-i18n="no_saved_title">No Saved Schemes Yet</h3>
+          <p data-i18n="no_saved_desc">Click the bookmark icon (Save) on any scheme card to save it here for later review.</p>
+          <a href="#explore" class="btn btn-primary btn-sm" data-i18n="btn_explore_now">Explore Schemes</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Preferences Modal -->
+  <div id="prefs-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="prefs-modal-title" hidden>
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 id="prefs-modal-title" data-i18n="prefs_title">User Preferences</h3>
+        <button class="modal-close" id="prefs-modal-close" aria-label="Close preferences modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-intro" data-i18n="prefs_intro">Save your preferred browsing settings. These are stored locally on your device without creating any account.</p>
+
+        <div class="form-item">
+          <label for="pref-language" data-i18n="label_pref_lang">Default Language</label>
+          <select id="pref-language" class="form-select">
+            <option value="en">English</option>
+            <option value="te">తెలుగు (Telugu)</option>
+            <option value="hi">हिन्दी (Hindi)</option>
+          </select>
+        </div>
+
+        <div class="form-item">
+          <label for="pref-state" data-i18n="label_pref_state">Home State / UT</label>
+          <select id="pref-state" class="form-select">
+            <option value="ALL">All India (Default)</option>
+          </select>
+        </div>
+
+        <div class="form-item">
+          <label for="pref-beneficiary" data-i18n="label_pref_category">Primary Category</label>
+          <select id="pref-beneficiary" class="form-select">
+            <option value="">Any / General</option>
+            <option value="Students">Students</option>
+            <option value="Farmers">Farmers</option>
+            <option value="Women">Women</option>
+            <option value="Small Business">Small Business</option>
+            <option value="Senior Citizens">Senior Citizens</option>
+            <option value="Job Seekers">Job Seekers</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="btn-save-prefs" class="btn btn-primary" data-i18n="btn_save_prefs">Save Preferences</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Detailed Scheme View Modal -->
+  <div id="scheme-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="scheme-modal-title" hidden>
+    <div class="modal-dialog modal-dialog-lg">
+      <div class="modal-header">
+        <div>
+          <span id="modal-scheme-level" class="badge-level">Central</span>
+          <span id="modal-scheme-state" class="badge-state">All India</span>
+          <h3 id="scheme-modal-title" class="modal-scheme-heading">Scheme Name</h3>
+          <p id="modal-scheme-dept" class="modal-scheme-sub">Ministry or Department</p>
+        </div>
+        <button class="modal-close" id="scheme-modal-close" aria-label="Close scheme details modal">&times;</button>
+      </div>
+
+      <div class="modal-body modal-scrollable">
+        <!-- Section: Overview -->
+        <div class="modal-section">
+          <h4 class="modal-section-title" data-i18n="sec_overview">Scheme Overview</h4>
+          <p id="modal-scheme-desc" class="modal-text"></p>
+        </div>
+
+        <!-- Section: Benefits -->
+        <div class="modal-section">
+          <h4 class="modal-section-title" data-i18n="sec_benefits">Key Benefits & Financial Assistance</h4>
+          <div id="modal-scheme-benefits" class="benefits-highlight-box"></div>
+        </div>
+
+        <!-- Section: Eligibility -->
+        <div class="modal-section">
+          <h4 class="modal-section-title" data-i18n="sec_eligibility">Eligibility Guidelines</h4>
+          <div id="modal-scheme-eligibility" class="eligibility-box"></div>
+        </div>
+
+        <!-- Section: Application Steps -->
+        <div class="modal-section">
+          <h4 class="modal-section-title" data-i18n="sec_steps">Step-by-Step Application Process</h4>
+          <ol id="modal-scheme-steps" class="application-steps-list"></ol>
+        </div>
+
+        <!-- Section: Required Documents Checklist -->
+        <div class="modal-section">
+          <h4 class="modal-section-title" data-i18n="sec_documents">Verified Required Documents</h4>
+          <div id="modal-scheme-docs" class="docs-checklist-box"></div>
+        </div>
+
+        <!-- Verification Date & Source Link -->
+        <div class="modal-metadata">
+          <div class="meta-item">
+            <span class="meta-label" data-i18n="last_verified">Last Verified:</span>
+            <span id="modal-scheme-verified" class="meta-value">2025-01-15</span>
+          </div>
+          <div class="meta-item">
+            <span class="meta-label" data-i18n="source_database">Database Status:</span>
+            <span class="meta-value text-success">Verified Active Record</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer modal-actions-split">
+        <button id="modal-save-btn" class="btn btn-outline" data-i18n="btn_save_scheme">🔖 Save to Favourites</button>
+        <a id="modal-official-link" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-accent btn-external">
+          <span data-i18n="btn_official_portal">Visit Official Government Portal</span> ↗
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer" id="disclaimer">
+    <div class="container footer-container">
+      <div class="footer-grid">
+        <!-- Brand Info -->
+        <div class="footer-col brand-col">
+          <div class="brand-logo footer-logo">
+            <span class="emblem-symbol">🏛️</span>
+            <span class="logo-title">SchemeSathi <span class="ai-badge">AI</span></span>
+          </div>
+          <p class="footer-tagline" data-i18n="tagline">Your Guide to Government Schemes.</p>
+          <p class="footer-about" data-i18n="footer_about">
+            SchemeSathi AI helps Indian citizens discover relevant government initiatives, evaluate eligibility criteria, and access direct official government portals.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h4 class="footer-heading" data-i18n="quick_links">Quick Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#explore" data-i18n="nav_explore">Explore Schemes</a></li>
+            <li><a href="#eligibility" data-i18n="nav_eligibility">Check Eligibility</a></li>
+            <li><a href="#assistant" data-i18n="nav_assistant">AI Assistant</a></li>
+            <li><a href="#checklist" data-i18n="nav_checklist">Document Checklist</a></li>
+            <li><a href="#saved" data-i18n="nav_saved">Saved Schemes</a></li>
+          </ul>
+        </div>
+
+        <!-- Official Resources Starting Links -->
+        <div class="footer-col">
+          <h4 class="footer-heading" data-i18n="official_resources">Official Portals</h4>
+          <ul class="footer-links">
+            <li><a href="https://www.myscheme.gov.in/" target="_blank" rel="noopener noreferrer">myScheme Portal (myscheme.gov.in) ↗</a></li>
+            <li><a href="https://www.india.gov.in/" target="_blank" rel="noopener noreferrer">National Portal of India (india.gov.in) ↗</a></li>
+            <li><a href="https://services.india.gov.in/" target="_blank" rel="noopener noreferrer">National Services Portal ↗</a></li>
+            <li><a href="https://scholarships.gov.in/" target="_blank" rel="noopener noreferrer">National Scholarship Portal ↗</a></li>
+            <li><a href="https://pmjay.gov.in/" target="_blank" rel="noopener noreferrer">Ayushman Bharat PM-JAY ↗</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact & Support -->
+        <div class="footer-col">
+          <h4 class="footer-heading" data-i18n="supported_languages">Languages Supported</h4>
+          <p class="footer-text" data-i18n="lang_support_note">SchemeSathi AI currently supports English, Telugu (తెలుగు), and Hindi (हिन्दी), with additional regional languages being added continuously.</p>
+          <div class="lang-pills">
+            <span class="pill">English</span>
+            <span class="pill">తెలుగు</span>
+            <span class="pill">हिन्दी</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Statutory Government Information Disclaimer -->
+      <div class="footer-legal">
+        <div class="legal-badge">
+          <span>⚠️</span> <strong data-i18n="disclaimer_heading">Statutory Disclaimer & Fair Use Notice:</strong>
+        </div>
+        <p class="legal-text" data-i18n="full_disclaimer">
+          SchemeSathi AI is an independent, non-governmental educational and public discovery tool created solely to help Indian citizens navigate public welfare information. SchemeSathi AI is NOT affiliated, associated, authorized, endorsed by, or in any way officially connected with the Government of India, any State Government, or any of their ministries or agencies. All official scheme names, guidelines, and logos remain the registered trademarks and copyrights of their respective government bodies. Scheme guidelines, financial criteria, eligibility limits, and deadlines are subject to official revision. Users must independently verify all scheme details and submit formal applications exclusively through the official government portal links provided (.gov.in / .nic.in). SchemeSathi AI does not collect any application fees, Aadhaar biometric keys, or financial passwords.
+        </p>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">© 2025 SchemeSathi AI. Built for the public interest of Indian citizens.</p>
+        <p class="hosted-note">Frontend: Vercel Ready | Backend: Python Flask REST API</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
